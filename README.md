@@ -1,4 +1,4 @@
-# iRead
+# iReader
 
 <!-- ABOUT THE PROJECT -->
 <p align="center">
