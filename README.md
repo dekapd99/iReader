@@ -69,8 +69,13 @@ Berikut struktur file dan folder pada Tasker:
 
 * [Swift](https://www.swift.org/documentation/)
 * [SwiftUI](https://developer.apple.com/documentation/swiftui/)
-* [Xcode](https://developer.apple.com/xcode/)
+* [Xcode 14.0](https://developer.apple.com/xcode/)
 * [VisionKit Framework](https://developer.apple.com/documentation/visionkit)
+
+
+### Requirements
+* [iOS 16.0 Beta](https://developer.apple.com/documentation/visionkit/datascannerviewcontroller?changes=_8_3)
+* [Xcode 14.0](https://developer.apple.com/xcode/)
 
 <!-- How to Install -->
 ## Installation
