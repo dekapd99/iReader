@@ -11,7 +11,7 @@ import VisionKit
 import AVKit
 
 // Berisikan Deklarasi Data Enum untuk Case Tipe Scan
-enum ScanType {
+enum ScanType: String {
     case barcode, text
 }
 
@@ -37,10 +37,10 @@ final class AppViewModel: ObservableObject {
     // Default Scan Type: Barcode
     @Published var scanType: ScanType = .barcode
     
-    //
+    // Variable untuk Tipe Scan Text
     @Published var textContentType: DataScannerViewController.TextContentType?
     
-    //
+    // Variable Multiple Scan Item
     @Published var recognizesMultipleItems = true
     
     // Variable Generate Data Type berdasarkan Published Property
@@ -48,6 +48,28 @@ final class AppViewModel: ObservableObject {
         scanType == .barcode ? .barcode() : .text(textContentType: textContentType)
     }
     
+    // Logic Header Text
+    var headerText: String {
+        // Ketika tidak ada item yang berhasil di Scan maka tampilkan tulisan Scanning ...
+        if recognizedItems.isEmpty {
+            return "Scanning \(scanType.raw)"
+        } else { // Jika ada item yang berhasil di Scan maka tampilkan tulisan Recognized x Items
+            return "Recognized \(recognizedItems.count) Items"
+        }
+    }
+    
+    // Valid Hash Value untuk Solve Problem scanning Barcode ketika menggunakan Scan Mode: Text
+    var dataScannerViewId: Int {
+        var hasher = Hasher()
+        hasher.combine(scanType)
+        hasher.combine(recognizesMultipleItems)
+        
+        // Optional textContentType ketika ada Content Type Tertentu saja
+        if let textContentType {
+            hasher.combine(textContentType)
+        }
+        return hasher.finalize() // Finalize State & return Hash Value
+    }
     
     // Variable Cek apakah Scanner tersedia dan bisa digunakan atau tidak
     private var isScannerAvailable: Bool {
