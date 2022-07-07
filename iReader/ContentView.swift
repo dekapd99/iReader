@@ -33,9 +33,9 @@ struct ContentView: View {
         case .scannerNotAvailable:
             Text("Device Anda Tidak Support Scanning Barcode")
         case .cameraAccessNotGranted:
-            Text("Please Provide Access to the Camera in Settings")
+            Text("Mohon Memberikan Izin Akses Kamera di Settings")
         case .notDetermined:
-            Text("Requesting Camera Access")
+            Text("Meminta Izin Akses Kamera")
         }
     } // Batas Body View
     
@@ -83,7 +83,7 @@ struct ContentView: View {
             .padding(.top)
             
             if vm.scanType == .text {
-                Picker("Text Content Type", selection: $vm.textContentType) {
+                Picker("Tipe Text", selection: $vm.textContentType) {
                     ForEach(textContentTypes, id: \.self.1.textContentType) { option in
                         Text(option.title).tag(option.textContentType)
                     }
