@@ -5,7 +5,7 @@
   <a href="#" target="_blank"><img src="iReader.png" width="200"></a>
 </p>
 
-Aplikasi iReader adalah aplikasi iOS Aplikasi Barcode dan Pemindai Teks Langsung dengan SwiftUI, AVKit, dan VisionKit (On Device Machine Learning Processing).
+Aplikasi iReader adalah aplikasi iOS Aplikasi Pemindai Barcode dan Teks dengan SwiftUI, AVKit, dan VisionKit (On Device Machine Learning Processing).
 
 ### Preview
 <p align="center">
