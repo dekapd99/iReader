@@ -5,7 +5,7 @@
   <a href="#" target="_blank"><img src="iReader.png" width="200"></a>
 </p>
 
-Aplikasi Tasker adalah aplikasi iOS Aplikasi Barcode dan Pemindai Teks Langsung dengan SwiftUI & VisionKit.
+Aplikasi Tasker adalah aplikasi iOS Aplikasi Barcode dan Pemindai Teks Langsung dengan SwiftUI, AVKit, dan VisionKit (On Device Machine Learning Processing).
 
 ### Preview
 <p align="center">
@@ -19,44 +19,12 @@ Aplikasi Tasker adalah aplikasi iOS Aplikasi Barcode dan Pemindai Teks Langsung 
 Berikut struktur file dan folder pada Tasker:
 
     .
-    ├── TaskerApp.swift            # Root Project: Konfirgurasi Firebase Firestore
+    ├── iReaderApp.swift           # Root Project: Konfirgurasi AppViewModel
+    ├── Info.plist                 # Privacy - Camera Usage Description
     ├── ContentView.swift          # Tampilan Beranda Aplikasi
     ├── Assets                     # Aset Logo dan Warna
-    ├── Component                  # Component: Berisikan Recyclable Element (Button, Search Bar, dan Text Field)
-    │   ├── SearchBarView.swift           # Berisikan UI Forms Search Bar
-    │   ├── BackgroundGradientView.swift  # Berisikan UI Background Gradient Color 
-    │   ├── TODOButtonStack.swift.        # Berisikan UI TODO Button Horizontal Stacks 
-    │   ├── AddTODOLogo.swift             # Berisikan Tampilan UI Ketika TODO List Kosong 
-    │   ├── LogoView.swift                # Berisikan Tampilan UI Logo di Halaman Login dan Register 
-    │   ├── BlankView.swift               # Berisikan Tampilan Overlay ketika Pop Up Create TODO
-    │   ├── AuthenticateButtonView.swift  # Berisikan UI Tombol Auth (Login & Register) 
-    │   ├── CustomTextEditor.swift        # Berisikan UI Forms TODO Descriptions 
-    │   └── TextFields                    # Component -> TextFields: Berisikan Placeholder Custom TextFields 
-    │       ├── CustomTextField.swift     # Berisikan Custom Text Field untuk Input Segala Jenis Forms 
-    │       ├── EmailTextField.swift      # Berisikan UI Forms Email Text Field 
-    │       ├── CustomSecureField.swift   # Berisikan Custom Secure Field khusus untuk Input Forms Password 
-    │       ├── PasswordSecureField.swift # Berisikan UI Forms Password Text Field 
-    │       ├── UserTextField.swift       # Berisikan UI Forms User Text Field untuk Input Data Pribadi User 
-    │       └── TODOTextField.swift       # Berisikan UI Forms TODO User Field untuk Input Data Title TODO 
-    │
-    ├── Model                     # Model: Firebase Data Declaration (Collection)
-    │   ├── Constant.swift        # Berisikan Akses Firestore dan Akses Entitas "users" di Collection
-    │   ├── AppUser.swift         # Berisikan Data Declaration untuk Informasi Users 
-    │   ├── TODO.swift            # Berisikan Data Declaration untuk Informasi TODO 
-    │   ├── SelectedButton.swift  # Berisikan All Case Category dari TODO
-    │   └── MockData.swift        # Berisikan data Dummy di Preview SwiftUI
-    │
-    ├── ViewModel                # ViewModel: Fungsi CRUD (TODO & Auth)
-    │   ├── AuthViewModel.swift  # Berisikan Fungsi Login / Register / Sign Out 
-    │   └── TODOViewModel.swift  # Berisikan Fungsi Load, Create, Delete, Complete, & Uncomplete TODO 
-    │
-    └── View                      # View: Controller UI & Frontend Related (Show & Get)
-        ├── DashboardView.swift   # Berisikan Tampilan Dashboard
-        ├── TODOView.swift        # Berisikan Tampilan TODO (Card)
-        ├── CreateTODOView.swift  # Berisikan Tampilan Pop Up Create TODO
-        └── Auth                  # View -> Auth: Berisikan Tampilan Halaman Autentikasi User
-            ├── LoginView.swift   # Berisikan Tampilan Halaman Login
-            └── SignupView.swift  # Berisikan Tampilan Halaman Register 
+    ├── AppViewModel.swift         # Berisikan Deklarasi Data Enum & Fungsi Main Thread
+    └── DataScannerView.swift      # Berisikan Fungsi Wrapper DataScannerView yang disediakan oleh Apple untuk Scanning Data dengan Camera
 
 <!-- List of Features -->
 ## Features:
@@ -71,7 +39,7 @@ Berikut struktur file dan folder pada Tasker:
 * [SwiftUI](https://developer.apple.com/documentation/swiftui/)
 * [Xcode 14.0](https://developer.apple.com/xcode/)
 * [VisionKit Framework](https://developer.apple.com/documentation/visionkit)
-
+* [AVKit](https://developer.apple.com/documentation/avkit)
 
 ### Requirements
 * [iOS 16.0 Beta](https://developer.apple.com/documentation/visionkit/datascannerviewcontroller?changes=_8_3)
@@ -91,6 +59,26 @@ git clone https://github.com/dekapd99/iReader.git
 
 <!-- What Kind of License? -->
 ## License
-No License 
+MIT License
+
+Copyright (c) 2022 DK
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
