@@ -8,6 +8,7 @@
 import SwiftUI
 import VisionKit
 
+// Berisikan Tampilan Beranda Aplikasi
 struct ContentView: View {
     
     @EnvironmentObject var vm: AppViewModel // Property Wrapper
