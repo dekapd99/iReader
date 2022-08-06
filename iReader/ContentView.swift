@@ -83,7 +83,7 @@ struct ContentView: View {
             .padding(.top)
             
             if vm.scanType == .text {
-                Picker("Tipe Text", selection: $vm.textContentType) {
+                Picker("Text Type", selection: $vm.textContentType) {
                     ForEach(textContentTypes, id: \.self.1.textContentType) { option in
                         Text(option.title).tag(option.textContentType)
                     }
