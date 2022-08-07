@@ -18,6 +18,32 @@ struct LiveTextView: UIViewRepresentable {
     let analyzer = ImageAnalyzer()
     let interaction = ImageAnalysisInteraction()
     
+    // Make UI View Representable Protocol
+    func makeUIView(context: Context) -> some UIView {
+        imageView.image = image
+        imageView.addInteraction(interaction) // Enable Live Text Interaction ke Image View
+        imageView.contentMode = .scaleAspectFit // Fit Size dengan Mengatur Aspek Ratio Image Captures
+        return imageView
+    }
+    
+    // Update UIView
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        guard let image = imageView.image else { return } // Grab the image dari imageView
+        // Async Task Modifier karena ImageAnalyzer menggunakan Async Await dalam Method-nya
+        Task { @MainActor in // Annotation for Main Thread
+            // Konfigurasi ImageAnalyzer dengan Target spesifik yang membaca Text & machineReadableCode (QR, Barcode, dll.)
+            let configuration = ImageAnalyzer.Configuration([.text, .machineReadableCode])
+            
+            // Get Capture Image, Analysis then Print Result to UI (result: .automatic)
+            do {
+                let analysis = try await analyzer.analyze(image, configuration: configuration)
+                interaction.analysis = analysis
+                interaction.preferredInteractionTypes = .automatic
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 // Overwrite Content Size that can be Resizable

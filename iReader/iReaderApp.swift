@@ -20,6 +20,8 @@ struct iReaderApp: App {
                 // Setup Environment Variabel agar bisa digunakan di Project ini
                 .environmentObject(vm)
                 .task { // Request Data Scanner Status di Main Thread
+                    // Cek apakah Device iOS versi A12 Bionic or Above when the App First Launch
+                    // Jika bukan maka tidak akan bisa launch LiveTextView
                     await vm.requestDataScannerAccessStatus()
                 }
         }
