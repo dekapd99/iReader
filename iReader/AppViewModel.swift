@@ -25,7 +25,7 @@ enum DataScannerAccessStatusType {
 }
 
 // Berisikan Fungsi di Main Thread
-@MainActor
+@MainActor // Annotation for Main Thread
 final class AppViewModel: ObservableObject {
     
     // Initial Value Access Status = not determined

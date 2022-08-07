@@ -13,6 +13,7 @@
 		AB9A9D83286F470C003EA020 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9A9D82286F470C003EA020 /* Preview Assets.xcassets */; };
 		ABDB1291287324AA00A53B80 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB1290287324AA00A53B80 /* AppViewModel.swift */; };
 		ABDB12932873328800A53B80 /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB12922873328800A53B80 /* DataScannerView.swift */; };
+		ABFFDE1E289F666F00A15F49 /* LiveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFDE1D289F666F00A15F49 /* LiveTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ABDB128F2873245500A53B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ABDB1290287324AA00A53B80 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		ABDB12922873328800A53B80 /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
+		ABFFDE1D289F666F00A15F49 /* LiveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				ABDB128F2873245500A53B80 /* Info.plist */,
 				AB9A9D7B286F470C003EA020 /* iReaderApp.swift */,
 				ABDB1290287324AA00A53B80 /* AppViewModel.swift */,
+				ABFFDE1D289F666F00A15F49 /* LiveTextView.swift */,
 				AB9A9D7D286F470C003EA020 /* ContentView.swift */,
 				ABDB12922873328800A53B80 /* DataScannerView.swift */,
 				AB9A9D7F286F470C003EA020 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			files = (
 				AB9A9D7E286F470C003EA020 /* ContentView.swift in Sources */,
 				AB9A9D7C286F470C003EA020 /* iReaderApp.swift in Sources */,
+				ABFFDE1E289F666F00A15F49 /* LiveTextView.swift in Sources */,
 				ABDB1291287324AA00A53B80 /* AppViewModel.swift in Sources */,
 				ABDB12932873328800A53B80 /* DataScannerView.swift in Sources */,
 			);

@@ -9,14 +9,10 @@ import Foundation
 import SwiftUI
 import VisionKit
 
-// Berisikan Fungsi Wrapper DataScannerView yang disediakan oleh Apple untuk Scanning Data dengan Camera seperti Live Video untuk Text / Data / Barcode / QR Code / Machine Readable Code
-// Semua Hal Tersebut akan di Wrap dalam UIViewControllerRepresentable ke dalam SwiftUI View
-
 /**
  * Berisikan Fungsi Wrapper DataScannerView yang disediakan oleh Apple untuk Scanning Data dengan Camera seperti Live Video untuk Text / Data / Barcode / QR Code / Machine Readable Code
  * Semua Hal Tersebut akan di Wrap dalam UIViewControllerRepresentable ke dalam SwiftUI View
 */
-
 struct DataScannerView: UIViewControllerRepresentable {
     
     @Binding var recognizedItems: [RecognizedItem] // Binding data: Item yang dikenali
