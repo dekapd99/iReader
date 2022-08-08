@@ -16,6 +16,7 @@
 		AB9A9D7E286F470C003EA020 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A9D7D286F470C003EA020 /* ContentView.swift */; };
 		AB9A9D80286F470C003EA020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9A9D7F286F470C003EA020 /* Assets.xcassets */; };
 		AB9A9D83286F470C003EA020 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9A9D82286F470C003EA020 /* Preview Assets.xcassets */; };
+		ABCBEDE328A16965009D1FC2 /* MacAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCBEDE228A16965009D1FC2 /* MacAppViewModel.swift */; };
 		ABDB1291287324AA00A53B80 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB1290287324AA00A53B80 /* AppViewModel.swift */; };
 		ABDB12932873328800A53B80 /* DataScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDB12922873328800A53B80 /* DataScannerView.swift */; };
 		ABFFDE1E289F666F00A15F49 /* LiveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFFDE1D289F666F00A15F49 /* LiveTextView.swift */; };
@@ -34,6 +35,7 @@
 		AB9A9D7D286F470C003EA020 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB9A9D7F286F470C003EA020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB9A9D82286F470C003EA020 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ABCBEDE228A16965009D1FC2 /* MacAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAppViewModel.swift; sourceTree = "<group>"; };
 		ABDB128F2873245500A53B80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ABDB1290287324AA00A53B80 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		ABDB12922873328800A53B80 /* DataScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				AB1CAE6828A11F8F0029F4F6 /* iReaderMacApp.swift */,
 				AB1CAE6A28A11F8F0029F4F6 /* ContentView.swift */,
+				ABCBEDE228A16965009D1FC2 /* MacAppViewModel.swift */,
 				AB1CAE7528A120310029F4F6 /* MacLiveTextView.swift */,
 				AB1CAE6C28A11F900029F4F6 /* Assets.xcassets */,
 				AB1CAE7128A11F900029F4F6 /* iReaderMac.entitlements */,
@@ -222,6 +225,7 @@
 			files = (
 				AB1CAE6B28A11F8F0029F4F6 /* ContentView.swift in Sources */,
 				AB1CAE6928A11F8F0029F4F6 /* iReaderMacApp.swift in Sources */,
+				ABCBEDE328A16965009D1FC2 /* MacAppViewModel.swift in Sources */,
 				AB1CAE7628A120310029F4F6 /* MacLiveTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
