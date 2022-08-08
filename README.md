@@ -57,7 +57,8 @@ git clone https://github.com/dekapd99/iReader.git
 
 2. Jika sudah silahkan buka Project di Xcode.
 3. Sambungkan iPhone dengan komputer Macbook Anda, dan pastikan untuk memilih iPhone tersebut pada Target Simulator (Kolom Device dibagian atas Xcode). 
-4. Build & Run
+4. Untuk bisa dijalankan di MacOS, Pastikan Target Scheme (Kolom Device dibagian atas Xcode) itu diubah menjadi MacLiveTextView agar Compiler bisa mendeteksi Tipe imageView dengan benar.
+5. Build & Run
 
 <!-- What Kind of License? -->
 ## License
