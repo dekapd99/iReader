@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB1CAE6928A11F8F0029F4F6 /* iReaderMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE6828A11F8F0029F4F6 /* iReaderMacApp.swift */; };
+		AB1CAE6B28A11F8F0029F4F6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE6A28A11F8F0029F4F6 /* ContentView.swift */; };
+		AB1CAE6D28A11F900029F4F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1CAE6C28A11F900029F4F6 /* Assets.xcassets */; };
+		AB1CAE7028A11F900029F4F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1CAE6F28A11F900029F4F6 /* Preview Assets.xcassets */; };
+		AB1CAE7628A120310029F4F6 /* MacLiveTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CAE7528A120310029F4F6 /* MacLiveTextView.swift */; };
 		AB9A9D7C286F470C003EA020 /* iReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A9D7B286F470C003EA020 /* iReaderApp.swift */; };
 		AB9A9D7E286F470C003EA020 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A9D7D286F470C003EA020 /* ContentView.swift */; };
 		AB9A9D80286F470C003EA020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9A9D7F286F470C003EA020 /* Assets.xcassets */; };
@@ -17,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB1CAE6628A11F8F0029F4F6 /* iReaderMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iReaderMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB1CAE6828A11F8F0029F4F6 /* iReaderMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iReaderMacApp.swift; sourceTree = "<group>"; };
+		AB1CAE6A28A11F8F0029F4F6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AB1CAE6C28A11F900029F4F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB1CAE6F28A11F900029F4F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB1CAE7128A11F900029F4F6 /* iReaderMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iReaderMac.entitlements; sourceTree = "<group>"; };
+		AB1CAE7528A120310029F4F6 /* MacLiveTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacLiveTextView.swift; sourceTree = "<group>"; };
 		AB9A9D78286F470C003EA020 /* iReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9A9D7B286F470C003EA020 /* iReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iReaderApp.swift; sourceTree = "<group>"; };
 		AB9A9D7D286F470C003EA020 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +41,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AB1CAE6328A11F8F0029F4F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB9A9D75286F470C003EA020 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +58,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB1CAE6728A11F8F0029F4F6 /* iReaderMac */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CAE6828A11F8F0029F4F6 /* iReaderMacApp.swift */,
+				AB1CAE6A28A11F8F0029F4F6 /* ContentView.swift */,
+				AB1CAE7528A120310029F4F6 /* MacLiveTextView.swift */,
+				AB1CAE6C28A11F900029F4F6 /* Assets.xcassets */,
+				AB1CAE7128A11F900029F4F6 /* iReaderMac.entitlements */,
+				AB1CAE6E28A11F900029F4F6 /* Preview Content */,
+			);
+			path = iReaderMac;
+			sourceTree = "<group>";
+		};
+		AB1CAE6E28A11F900029F4F6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CAE6F28A11F900029F4F6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		AB9A9D6F286F470C003EA020 = {
 			isa = PBXGroup;
 			children = (
 				AB9A9D7A286F470C003EA020 /* iReader */,
+				AB1CAE6728A11F8F0029F4F6 /* iReaderMac */,
 				AB9A9D79286F470C003EA020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9A9D78286F470C003EA020 /* iReader.app */,
+				AB1CAE6628A11F8F0029F4F6 /* iReaderMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +123,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AB1CAE6528A11F8F0029F4F6 /* iReaderMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB1CAE7428A11F900029F4F6 /* Build configuration list for PBXNativeTarget "iReaderMac" */;
+			buildPhases = (
+				AB1CAE6228A11F8F0029F4F6 /* Sources */,
+				AB1CAE6328A11F8F0029F4F6 /* Frameworks */,
+				AB1CAE6428A11F8F0029F4F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iReaderMac;
+			productName = iReaderMac;
+			productReference = AB1CAE6628A11F8F0029F4F6 /* iReaderMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		AB9A9D77286F470C003EA020 /* iReader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB9A9D86286F470C003EA020 /* Build configuration list for PBXNativeTarget "iReader" */;
@@ -108,6 +167,9 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					AB1CAE6528A11F8F0029F4F6 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					AB9A9D77286F470C003EA020 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -127,11 +189,21 @@
 			projectRoot = "";
 			targets = (
 				AB9A9D77286F470C003EA020 /* iReader */,
+				AB1CAE6528A11F8F0029F4F6 /* iReaderMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AB1CAE6428A11F8F0029F4F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1CAE7028A11F900029F4F6 /* Preview Assets.xcassets in Resources */,
+				AB1CAE6D28A11F900029F4F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB9A9D76286F470C003EA020 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +216,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AB1CAE6228A11F8F0029F4F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB1CAE6B28A11F8F0029F4F6 /* ContentView.swift in Sources */,
+				AB1CAE6928A11F8F0029F4F6 /* iReaderMacApp.swift in Sources */,
+				AB1CAE7628A120310029F4F6 /* MacLiveTextView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB9A9D74286F470C003EA020 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,6 +241,64 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		AB1CAE7228A11F900029F4F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iReaderMac/iReaderMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iReaderMac/Preview Content\"";
+				DEVELOPMENT_TEAM = BZ9S44ZL2V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deka.iReaderMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AB1CAE7328A11F900029F4F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iReaderMac/iReaderMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iReaderMac/Preview Content\"";
+				DEVELOPMENT_TEAM = BZ9S44ZL2V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deka.iReaderMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		AB9A9D84286F470C003EA020 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -338,6 +478,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AB1CAE7428A11F900029F4F6 /* Build configuration list for PBXNativeTarget "iReaderMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1CAE7228A11F900029F4F6 /* Debug */,
+				AB1CAE7328A11F900029F4F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AB9A9D73286F470C003EA020 /* Build configuration list for PBXProject "iReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

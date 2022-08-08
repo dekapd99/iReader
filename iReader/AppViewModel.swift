@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import PhotosUI // Photo Library: Photo Picker View (Native iOS UI Photo)
 import VisionKit
 import AVKit
 
@@ -48,6 +49,9 @@ final class AppViewModel: ObservableObject {
     
     // Variable Identifikasi Photo Image yang di Capture Camera Live Video
     @Published var capturedPhoto: IdentifiableImage? = nil
+    
+    // Variable Selected Photo Item
+    @Published var selectedPhotoPickerItem: PhotosPickerItem? = nil
     
     // Variable Generate Data Type berdasarkan Published Property
     var recognizedDataType: DataScannerViewController.RecognizedDataType {

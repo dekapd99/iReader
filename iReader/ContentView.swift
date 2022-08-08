@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 import VisionKit
 
 // Berisikan Tampilan Beranda Aplikasi
@@ -41,12 +42,7 @@ struct ContentView: View {
     
     // Main View
     private var mainView: some View {
-        DataScannerView(
-            shouldCapturePhoto: $vm.shouldCapturePhoto,
-            capturedPhoto: $vm.capturedPhoto,
-            recognizedItems: $vm.recognizedItems,
-            recognizedDataType: vm.recognizedDataType,
-            recognizesMultipleItems: vm.recognizesMultipleItems)
+        liveImageFeed
         .background { Color.gray.opacity(0.3) }
         .ignoresSafeArea()
         .id(vm.dataScannerViewId) // Explicit ID Validator untuk Scan Mode: Text
@@ -56,6 +52,7 @@ struct ContentView: View {
                 .presentationDetents([.medium, .fraction(0.25)])
                 .presentationDragIndication(.visible)
                 .interactiveDismissDisabled()
+                .disabled(vm.capturedPhoto != nil) // Disable User Interaction when Captured Photo Exists
                 .onAppear { // Agar Background Translucent Apply ke Apps
                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
                           let controller = windowScene.windows.first?.rootViewController?.presentedViewController else {
@@ -63,12 +60,59 @@ struct ContentView: View {
                     }
                     controller.view.backgroundColor = .clear
                 }
-        }
+                .sheet(item: $vm.capturedPhoto) { photo in
+                    ZStack(alignment: .topTrailing) {
+                        LiveTextView(image: photo.image)
+                        
+                        // Button Dismiss Second Sheet
+                        Button {
+                            vm.capturedPhoto = nil
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                        }
+                        .foregroundColor(.white)
+                        .padding([.trailing, .top])
+                    } // ZStack LiveTextView
+                    .edgesIgnoringSafeArea(.bottom)
+                } // Second Sheet
+        } // First Sheet
         
         .onChange(of: vm.scanType) { _ in vm.recognizedItems = [] } // Reset List
         .onChange(of: vm.textContentType) { _ in vm.recognizesMultipleItems = [] } // Reset List
         .onChange(of: vm.recognizesMultipleItems) { _ in vm.recognizedItems = [] } // Reset List
+        // Medium for selectedPhotoPickerItem changed value
+        .onChange(of: vm.selectedPhotoPickerItem) { newValue in
+            guard let newValue = else { return }
+            // Async Task Modifier for selectedPhotoPickerItem newValue
+            Task { @MainActor in
+                // New Transferable Protocol that Apple Introduce in iOS 16
+                guard let data = try? await newValue.loadTransferable(type: Data.self),
+                      let image = UIImageView(data: data) // Passing the downloaded Transferable data
+                else { return }
+                // Trigger Second Sheet Presentation Containing the LiveTextView
+                self.vm.capturedPhoto = .init(image: image)
+            }
+        }
     } // Batas Main View
+    
+    // While presenting this captured photo in a second sheet we want to stop the Live Scanner View because it will eat the processing power & battery life, when this live test interaction is being presented with a static image i want to stop the live test scanning
+    @ViewBuilder // ViewBuilder Annotation
+    private var liveImageFeed: some View {
+        if let capturedPhoto = vm.capturedPhoto {
+            // Show Captured Photo in Static Image
+            Image(uiImage: capturedPhoto.image)
+                .resizable()
+                .scaledToFit()
+        } else {
+            DataScannerView(
+                shouldCapturePhoto: $vm.shouldCapturePhoto,
+                capturedPhoto: $vm.capturedPhoto,
+                recognizedItems: $vm.recognizedItems,
+                recognizedDataType: vm.recognizedDataType,
+                recognizesMultipleItems: vm.recognizesMultipleItems)
+        }
+    }
     
     // Header View
     private var headerView: some View {
@@ -93,7 +137,28 @@ struct ContentView: View {
                 .pickerStyle(.segmented)
             }
             
-            Text(vm.headerText).padding(.top)
+            HStack {
+                Text(vm.headerText)
+                Spacer()
+                
+                // Photos Picker: limit to be able to get the Image Only
+                PhotosPicker(selection: $vm.selectedPhotoPickerItem, matching: .images) {
+                    // View that will be Shown
+                    Image(systemName: "photo.circle")
+                        .imageScale(.large)
+                        .font(.system(size: 32))
+                }
+                
+                // Button Toggle Captured Photo Boolean
+                Button {
+                    vm.shouldCapturePhoto = true
+                } label: {
+                    Image(systemName: "camera.circle")
+                        .imageScale(.large)
+                        .font(.system(size: 32))
+                }
+
+            }
         } // Batas VStack
         .padding(.horizontal)
     } // Batas Header View
