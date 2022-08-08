@@ -43,6 +43,12 @@ final class AppViewModel: ObservableObject {
     // Variable Multiple Scan Item
     @Published var recognizesMultipleItems = true
     
+    // Default Value: Capture Photo = false
+    @Published var shouldCapturePhoto = false
+    
+    // Variable Identifikasi Photo Image yang di Capture Camera Live Video
+    @Published var capturedPhoto: IdentifiableImage? = nil
+    
     // Variable Generate Data Type berdasarkan Published Property
     var recognizedDataType: DataScannerViewController.RecognizedDataType {
         scanType == .barcode ? .barcode() : .text(textContentType: textContentType)

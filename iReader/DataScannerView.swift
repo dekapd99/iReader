@@ -15,6 +15,8 @@ import VisionKit
 */
 struct DataScannerView: UIViewControllerRepresentable {
     
+    @Binding var shouldCapturePhoto: Bool // Binding data: Capture Photo
+    @Binding var capturedPhoto: IdentifiableImage? // Binding data: struct IdentifiableImage
     @Binding var recognizedItems: [RecognizedItem] // Binding data: Item yang dikenali
     let recognizedDataType: DataScannerViewController.RecognizedDataType // Tipe Data yang dikenali
     let recognizesMultipleItems: Bool // Default Item yang dikenali dalam jumlah banyak
@@ -36,6 +38,24 @@ struct DataScannerView: UIViewControllerRepresentable {
         uiViewController.delegate = context.coordinator
         // Meminta untuk Start Scanning Camera Video
         try? uiViewController.startScanning()
+        // Start Capturing Photo
+        if shouldCapturePhoto {
+            capturePhoto(dataScannerVC: uiViewController)
+        }
+    }
+    
+    // Fungsi Capture High Resolution Photo dari Camera Live Video
+    private func capturePhoto(dataScannerVC: DataScannerViewController) {
+        // Async Task Modifier untuk Capture Photo
+        Task { @MainActor in
+            do {
+                let photo = try await dataScannerVC.capturePhoto()
+                self.capturedPhoto = .init(image: photo) // Get result dalam bentuk Foto Image
+            } catch {
+                print(error.localizedDescription)
+            }
+            self.shouldCapturePhoto = false // Setelah Capture Photo, ubah value jadi False
+        }
     }
     
     // Fungsi Pembuatan Coordinator ketika Mengenail Items dengan Camera
@@ -85,4 +105,10 @@ struct DataScannerView: UIViewControllerRepresentable {
             print("Tidak Dapat di Akses Karena Error \(error.localizedDescription)")
         }
     }
+}
+
+// Struct Identifikasi Gambar yang di Capture -> Get ID & Image
+struct IdentifiableImage: Identifiable {
+    let id = UUID()
+    let image: UIImage
 }

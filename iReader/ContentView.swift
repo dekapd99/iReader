@@ -42,6 +42,8 @@ struct ContentView: View {
     // Main View
     private var mainView: some View {
         DataScannerView(
+            shouldCapturePhoto: $vm.shouldCapturePhoto,
+            capturedPhoto: $vm.capturedPhoto,
             recognizedItems: $vm.recognizedItems,
             recognizedDataType: vm.recognizedDataType,
             recognizesMultipleItems: vm.recognizesMultipleItems)
