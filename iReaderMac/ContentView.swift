@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // Agar bisa memanggil fungsi dari MacAppViewModel
     @StateObject private var vm = MacAppViewModel()
     
+    // Check Device for Supported Live Text Interaction Feature
     var body: some View {
         if vm.isLiveTextSupported {
             mainView
@@ -19,8 +21,9 @@ struct ContentView: View {
         }
     }
     
-    @ViewBuilder
+    @ViewBuilder // ViewBuilder Annotation
     private var mainView: some View {
+        // View for Selected Image
         if let selectedImage = vm.selectedImage {
             ZStack(alignment: .topTrailing) {
                 MacLiveTextView(image: selectedImage)
@@ -39,6 +42,7 @@ struct ContentView: View {
         }
     }
     
+    // Default View: Blank Import View (Waiting files to be imported...)
     private var importView: some View {
         Button {
             vm.importImage()

@@ -68,7 +68,7 @@ struct DataScannerView: UIViewControllerRepresentable {
         uiViewController.stopScanning()
     }
     
-    // Class Coordinator
+    // Class Coordinator untuk Analisis Live Record Feature
     class Coordinator: NSObject, DataScannerViewControllerDelegate {
         
         @Binding var recognizedItems: [RecognizedItem] // Binding data: Mengenali Item

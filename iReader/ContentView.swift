@@ -96,7 +96,7 @@ struct ContentView: View {
         }
     } // Batas Main View
     
-    // While presenting this captured photo in a second sheet we want to stop the Live Scanner View because it will eat the processing power & battery life, when this live test interaction is being presented with a static image i want to stop the live test scanning
+    // View untuk Menampilkan Gambar Statis ketika Fitur Live Scanner View sudah selesai Scanning
     @ViewBuilder // ViewBuilder Annotation
     private var liveImageFeed: some View {
         if let capturedPhoto = vm.capturedPhoto {

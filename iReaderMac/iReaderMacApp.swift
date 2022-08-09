@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Root Project: Konfirgurasi AppViewModel di seluruh Project MacOS
 @main
 struct iReaderMacApp: App {
     var body: some Scene {

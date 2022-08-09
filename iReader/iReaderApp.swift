@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Root Project: Konfirgurasi AppViewModel di seluruh Project
+// Root Project: Konfirgurasi AppViewModel di seluruh Project iOS
 @main
 struct iReaderApp: App {
     
