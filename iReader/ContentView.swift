@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 import VisionKit
 
-// Berisikan Tampilan Beranda Aplikasi
+// Berisikan Tampilan Beranda Aplikasi iOS
 struct ContentView: View {
     
     @EnvironmentObject var vm: AppViewModel // Property Wrapper

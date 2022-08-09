@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Berisikan Tampilan Beranda Aplikasi
+// Berisikan Tampilan Beranda Aplikasi MacOS
 struct ContentView: View {
     
     // Agar bisa memanggil fungsi dari MacAppViewModel
