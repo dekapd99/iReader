@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import VisionKit
 
+// Berisikan Fungsi , Import Image, Drag & Drop, NSOpenPanel, Open Selected Image, & Processing Image Upload
 class MacAppViewModel: ObservableObject {
     
     @Published var selectedImage: NSImage?

@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 import VisionKit
 
-@MainActor
+// Berisikan Fungsi Live Text Capture for Static Image Uploaded
+@MainActor // Annotation for Main Thread
 struct MacLiveTextView: NSViewRepresentable {
     
     let image: NSImage // NSImage when MacLiveTextView Initialize
